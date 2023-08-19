@@ -1,28 +1,31 @@
- 
-
-</html>
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>BMI Calculator</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>BMI Calculator</h1>
-    <form id="bmi-form">
-        <label for="weight">Weight (kg):</label>
-        <input type="number" id="weight" step="0.01" required><br>
-        
-        <label for="height">Height (m):</label>
-        <input type="number" id="height" step="0.01" required><br>
-        
-        <button type="button" id="calculate">Calculate BMI</button>
-    </form>
-    
-    <div id="result"></div>
+    <div>
+      <img src="body-mass-index-bmi-chart.jpg" alt="img" />
+    </div>
 
-    <script src="web.js"></script>
-</body>
- 
+    <nav>
+      <form id="bmi-form">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" step="0.01" required /><br />
+
+        <label for="height">Height (m):</label>
+        <input type="number" id="height" step="0.01" required /><br />
+
+        <button type="button" id="calculate">Calculate BMI</button>
+      </form>
+
+      <div id="result"></div>
+
+      <script src="web.js"></script>
+    </nav>
+  </body>
 </html>
