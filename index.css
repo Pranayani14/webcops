@@ -1,29 +1,35 @@
- body {
-    background-image: linear-gradient(79deg, #7439db, #C66FBC 48%,#f7944d);
-}
+ window.onload = function() {
+    alert('Welcome to your BMI CALCULATOR website!');
+};
 
-body nav {
-  padding-top: 6%;
-  text-align: center;
-   font-size: 60px;
-  min-height: 300vh;
-  align-items: center;
-  justify-content: center;
-   
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const calculateButton = document.getElementById("calculate");
+    const weightInput = document.getElementById("weight");
+    const heightInput = document.getElementById("height");
+    const resultDiv = document.getElementById("result");
+
+    calculateButton.addEventListener("click", function () {
+        const weight = parseFloat(weightInput.value);
+        const height = parseFloat(heightInput.value);
+
+        if (!isNaN(weight) && !isNaN(height) && height > 0) {
+            const bmi = calculateBMI(weight, height);
+            const category = getBMICategory(bmi);
+            resultDiv.innerHTML = `Your BMI is: ${bmi.toFixed(2)} (${category})`;
+        } else {
+            resultDiv.innerHTML = "Please enter valid weight and height values.";
+        }
+    });
 
 
-h1 {
-    padding-left: 44%;
-    
-    font-family: 'Moirai One', cursive;
-         display: inline-block;
-         color: #111111;
-}
+    function calculateBMI(weight, height) {
+        return weight / (height * height);
+    }
 
-img {
-   padding-left: 33%;
-  height: 600px;
-  width: 700px;
-
-}
+    function getBMICategory(bmi) {
+        if (bmi < 18.5) return "Underweight";
+        if (bmi < 24.9) return "Normal weight";
+        if (bmi < 29.9) return "Overweight";
+        return "Obese";
+    }
+});
