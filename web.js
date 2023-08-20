@@ -1,4 +1,8 @@
- document.addEventListener("DOMContentLoaded", function () {
+window.onload = function() {
+    alert('Welcome to your BMI CALCULATOR website!');
+};
+
+document.addEventListener("DOMContentLoaded", function () {
     const calculateButton = document.getElementById("calculate");
     const weightInput = document.getElementById("weight");
     const heightInput = document.getElementById("height");
