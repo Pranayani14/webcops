@@ -1,8 +1,4 @@
-window.onload = function() {
-    alert('Welcome to your BMI CALCULATOR website!');
-};
-
-document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
     const calculateButton = document.getElementById("calculate");
     const weightInput = document.getElementById("weight");
     const heightInput = document.getElementById("height");
@@ -20,3 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
             resultDiv.innerHTML = "Please enter valid weight and height values.";
         }
     });
+
+    function calculateBMI(weight, height) {
+        return weight / (height * height);
+    }
+
+    function getBMICategory(bmi) {
+        if (bmi < 18.5) return "Underweight";
+        if (bmi < 24.9) return "Normal weight";
+        if (bmi < 29.9) return "Overweight";
+        return "Obese";
+    }
+});
